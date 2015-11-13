@@ -193,7 +193,7 @@ class Prefs(dict):
                     self.__data['DENY_THRESHOLD_RESTRICTED'] = self.__data['DENY_THRESHOLD_ROOT']
                 else:
                     ok = 0
-            elif val_reqd and not self.__data[name_reqd]:
+            elif val_reqd and self.__data[name_reqd] is None:
                 print("Missing configuration value for: %s" % name_reqd)
                 ok = 0
 
